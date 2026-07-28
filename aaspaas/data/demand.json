@@ -1,0 +1,34 @@
+[
+  {
+    "id": "ice-cream",
+    "category": "Ice cream",
+    "orders": 214,
+    "window": "after 10 pm",
+    "sentence": "Ice cream is moving fast near you — 214 orders after 10 pm.",
+    "entryOffer": "First time trying this? Single cup ₹49 — smallest way in"
+  },
+  {
+    "id": "cold-fever",
+    "category": "Cold & fever meds",
+    "orders": 96,
+    "window": "tonight",
+    "sentence": "Cold & fever meds are in demand — 96 orders tonight in Sector 47.",
+    "entryOffer": "First time trying this? Single strip ₹49 — smallest way in"
+  },
+  {
+    "id": "party",
+    "category": "Party snacks & mixers",
+    "orders": 178,
+    "window": "tonight",
+    "sentence": "Party snacks & mixers are buzzing — 178 orders tonight near you.",
+    "entryOffer": "First time trying this? Mini pack ₹49 — smallest way in"
+  },
+  {
+    "id": "pet",
+    "category": "Pet supplies",
+    "orders": 64,
+    "window": "today",
+    "sentence": "Pet supplies are stocking up — 64 orders today in your neighbourhood.",
+    "entryOffer": "First time trying this? Trial pouch ₹49 — smallest way in"
+  }
+]
