@@ -1,0 +1,415 @@
+source,id,date,text,engagement_score,rating_if_available,previous_category,price_label,key_phrase
+playstore,4106f4bb-62c8-4746-96e3-a7aeb1b71f64,2026-08-19T20:34:42,amazing it save my lots of money....💝i love it,0,5,saving_money_general,price_sentiment_generic,it save my lots of money
+playstore,7be12f85-3049-4cba-9bde-066ce1b627a4,2026-08-19T19:48:49,The prices are expensive but the quality is great and I would love to shop here,0,4,purchase_hesitation_price,price_sentiment_generic,The prices are expensive but the quality is great and I would love to shop here
+playstore,8e507734-7f37-499d-84c6-bd2065015978,2026-08-19T12:50:53,"Good, but not budget friendly for everyone!",0,5,price_consideration,price_sentiment_generic,not budget friendly for everyone
+playstore,4c879ee9-e47f-45e1-9fe0-d94e609c8ed6,2026-08-19T10:53:16,Rates is too higher,0,5,price_consideration,price_sentiment_generic,Rates is too higher
+playstore,de0fe98b-828b-4ebf-a3c3-95c98e38c29f,2026-08-19T10:31:51,good but costly,0,5,price_consideration,price_sentiment_generic,costly
+playstore,0c8fd125-4ab7-417b-bdb2-034fb382a058,2026-08-18T19:08:03,"it's an amazing app,gives discount on many occasions.",0,5,price_sale_timing,price_sentiment_generic,gives discount on many occasions
+playstore,4924227c-d940-4bf3-b878-c042b0052976,2026-08-18T13:31:44,"One of the best online shopping apps for fashion and lifestyle products. It offers a wide range of clothing, footwear, accessories, and beauty products from popular brands. The app is user-friendly, with easy navigation and secure payment options. Delivery is usually fast, and the return/exchange process is simple and hassle-free. Regular discounts and sales make shopping more affordable. Overall, Myntra provides a convenient and enjoyable shopping experience. ⭐⭐⭐⭐⭐",0,5,price/sale timing,price_sentiment_generic,Regular discounts and sales make shopping more affordable
+playstore,7714c45a-1ad2-44bf-a69e-95d20a924751,2026-08-18T13:12:12,only genuine products and a lot of discount,1,5,price/sale timing considerations,price_sentiment_generic,a lot of discount
+playstore,8ef51384-9f22-40a9-8859-a6792cfb8d8a,2026-08-18T10:52:01,good quality and best offers discount by myntra fashion shopping,0,5,price/sale timing considerations,price_sentiment_generic,best offers discount
+playstore,c3acc51e-8953-40f3-bd54-f6f0216dda8c,2026-08-18T05:40:30,This app Product advertisement coming discount on this app when I'm booking the product it's confirmed same offer at the booking time after 2 days it's getting ato cancelled without any issue I'm seeing worst application.,0,1,purchase_hesitation_price_timing,price_deferral,Product advertisement coming discount on this app when I'm booking the product it's confirmed same offer at the booking time after 2 days it's getting ato cancelled
+playstore,613c9392-4b2f-4748-877d-45893d08db40,2026-08-18T03:21:22,good but high price,0,4,price_timing_consideration,price_sentiment_generic,high price
+playstore,156a0dd7-d297-4350-bb04-ff3b77ce4261,2026-08-17T19:39:06,worth for that prize,0,4,price_timing_consideration,price_sentiment_generic,worth for that prize
+playstore,e8e0fc9f-4f69-46e3-8d8c-11b52d283200,2026-08-17T07:57:40,right place to buy your own products on right price,0,5,price_timing_consideration,price_sentiment_generic,right place to buy your own products on right price
+playstore,1bbac379-45ec-4895-88c3-25daf3257c4e,2026-08-22T13:15:16,expensive clothes in affordable price,0,5,price_consideration,price_sentiment_generic,expensive clothes in affordable price
+playstore,16535476-da83-446f-8f7b-f08743f486c4,2026-08-22T11:25:33,"good but little expensive, quality was much good",0,4,price_consideration,price_sentiment_generic,little expensive
+playstore,5811cbea-8c81-440d-bdd5-2d4570331224,2026-08-22T10:29:53,"Costing too much extra fees, convenience fees n that.",2,1,price_concerns_purchase_hesitation,price_sentiment_generic,"Costing too much extra fees, convenience fees n that"
+playstore,2e4ee96c-0ba9-49d3-9081-80ccc0ae5fef,2026-08-22T06:14:24,Good Platform for Originals with discount,0,5,price_timing_consideration,price_sentiment_generic,with discount
+playstore,d4a04135-bfef-4ab6-baa6-0375227a5687,2026-08-22T00:25:34,"very bad,iska saman bahut mahenga hai or mesho shopsy se dubble rate hai ,isse badhiya mesho shopsy hai",0,1,price_comparison_shopping,price_sentiment_generic,iska saman bahut mahenga hai or mesho shopsy se dubble rate hai
+playstore,0a261671-f782-437c-8dd8-7b7d14088fd4,2026-08-21T23:30:46,please make some discount available for users,0,5,price/sale timing considerations,price_sentiment_generic,please make some discount available for users
+playstore,79ad732a-9303-40e4-9ec4-0973df8dceae,2026-08-21T20:16:02,loved the discount they provide on big brands,0,5,price/sale timing,price_sentiment_generic,loved the discount they provide on big brands
+playstore,36232666-f076-48c0-9fc2-38c836d81f6f,2026-08-21T19:22:20,offers are unbelievable,0,5,price/sale timing,price_sentiment_generic,offers are unbelievable
+playstore,9a75198f-4532-49af-b197-9f3cb223096d,2026-08-21T12:49:23,having low price product,0,5,price_consideration,price_sentiment_generic,having low price product
+playstore,9cda3ce3-d149-444d-9cb8-961c3e73ed8d,2026-08-21T10:30:06,it's good but sum time it's too expensive,0,3,price_timing_consideration,price_sentiment_generic,sum time it's too expensive
+playstore,4ab49712-b351-4998-bef2-3cbaadb38f52,2026-08-21T05:03:36,platform for Original products with great discounts,0,5,price/sale timing considerations,price_sentiment_generic,great discounts
+playstore,9fd0a288-4066-48de-9941-67f471be44cf,2026-08-21T01:39:11,Amazing experience must buy products from myntra and I request to myntra that if possible bring some amazing deals for summer and winter,0,5,sale_timing_consideration,price_sentiment_generic,I request to myntra that if possible bring some amazing deals for summer and winter
+playstore,38a8667e-8f23-4416-8800-b973f1a68158,2026-08-20T18:49:09,genuine product with best offer,0,4,price_or_sale_timing,price_sentiment_generic,best offer
+playstore,a08cde0f-2f55-4f6c-8ca4-a4ee05039ca2,2026-08-20T13:19:10,worst clothing brand ever used. Every time I purchase something from sale in their application and especially the prepaid order they always send different brands and when you try to return these products they don't get returned and your money gets stuck. Firstly when this happened with me I thought it's just a misunderstanding but when it's done twice I got to know they try to clear their other company unsold product in the name of sale,0,1,sale_timing_consideration,price_sentiment_generic,Every time I purchase something from sale in their application
+playstore,5b803897-4565-4cb6-9fcc-dd4ddae98192,2026-08-20T07:09:21,best but price high,0,5,price_consideration,price_sentiment_generic,best but price high
+playstore,f3394f69-fa31-4c1d-b2e4-7ef3de12e33e,2026-08-20T07:06:24,awesome discount,0,5,price/sale timing,price_sentiment_generic,awesome discount
+appstore,14451892772,2026-08-20T11:43:15-07:00,"Nice product
+
+Very nice but price high overall nice product",0,5,price_consideration,price_sentiment_generic,price high
+appstore,14448063116,2026-08-19T12:47:04-07:00,"Good for discount
+
+Good app for purchasing branded clothes in discounted price",0,5,price/sale timing,price_sentiment_generic,Good app for purchasing branded clothes in discounted price
+appstore,14443102520,2026-08-18T07:49:23-07:00,"PK
+
+Best deals every i buy my dream luxury products on very good discounts",0,5,price/sale timing considerations,price_sentiment_generic,Best deals every i buy my dream luxury products on very good discounts
+appstore,14443085729,2026-08-18T07:44:35-07:00,"Fashion style , Deals
+
+This app is very genuine and  the products are 100 original and discounts are always great on season .",0,5,price_or_sale_timing,price_sentiment_generic,discounts are always great on season
+youtube,UgzDTpvaugbdOOtuJJB4AaABAg,2026-08-20T19:04:05Z,"The contents which u make are same since long and the kurta sets u are showing looks very old fashion with no style statement. I think u should try making videos of different topics too like other YouTubers rather than only sponsored or these type of old fashion contents . 
+
+
+Every suits looks bad with poor fabric and no style statement. Very outdated honestly.
+And Rakhi has already arrived , Abhi yeh video dalke kya faida ? Order karne se delivery will happen before Rakhi ? And even it it does , if exchange karna pare toh ? We have no time . Tora toh logic ho apke videos mei 😂.",0,,purchase_hesitation_timing,price_sentiment_generic,"Rakhi has already arrived, Abhi yeh video dalke kya faida? Order karne se delivery will happen before Rakhi? And even it it does, if exchange karna pare toh? We have no time."
+youtube,UgzE4YAcRE0s20Yldyd4AaABAg,2026-08-17T04:08:01Z,"All the kurta sets are to expensive all are 2000+ how can every one buy 
+
+Make videos under 1500 rupes everyone is not like you Rich madam ji 🙍🫡",0,,price_timing_consideration,price_sentiment_generic,All the kurta sets are to expensive all are 2000+ how can every one buy
+youtube,UgztOFRM_jwEFaMleol4AaABAg,2026-04-09T11:43:15Z,Too expensive 😢,3,,price_hesitation,price_sentiment_generic,Too expensive 😢
+youtube,Ugw0i-4w3BE8A4-5Elx4AaABAg,2026-04-09T02:54:31Z,These are too expensive 😂😂,29,,price_timing_consideration,price_sentiment_generic,These are too expensive
+youtube,UgzqnD8A-vw_YAJIfEJ4AaABAg,2026-04-11T13:42:14Z,Dresses to sunder hai per price to auur bhi sunder 😅,3,,price_appreciation,price_sentiment_generic,Dresses to sunder hai per price to auur bhi sunder
+youtube,UgzEbWAPClFR2Lw0JOJ4AaABAg,2026-04-08T14:35:14Z,They're so expensive 😭🤌🏻,3,,price_timing_consideration,price_sentiment_generic,They're so expensive 😭🤌🏻
+youtube,UgzCOwIpAEblYz6Foax4AaABAg,2025-07-18T18:14:58Z,Rate jyada hai😢,11,,price consideration,price_sentiment_generic,Rate jyada hai😢
+youtube,UgyqAWtTU3OwKjjsZZN4AaABAg,2025-06-13T09:14:02Z,Diii aap itne aache clothes btate ho jo hum afford hi ni kr payenge 1 top 500 ka,0,,price_concern_purchase_hesitation,price_sentiment_generic,jo hum afford hi ni kr payenge 1 top 500 ka
+youtube,UgwpOXYSowWx9n_tTUZ4AaABAg,2025-09-10T00:51:03Z,Jiji please messho se batvo ye to bohot mahnga hai 😢,2,,price_concern,price_sentiment_generic,ye to bohot mahnga hai
+reddit,Endofyearsale,2024-11-27,"Anything worth buying on myntra now that their sale is on?
+
+Same as title.
+
+COMMENTS:
+Things i wanted are not even on any discount. Will wait for dec eors for sure
+---
+From 7th or 8th Dec
+---
+![gif](giphy|nGwUR2miMBY4lXfLkt)
+---
+I got a cross body bag and Jackets from H&amp;M. Their jacket quality is good.
+---
+Hey could u pls share the links or pics of what all u got? Thankyou 🤍
+---
+H&amp;M Teddy Jacket http://www.myntra.com/mailers/topwear/h&amp;m/h&amp;m-teddy-jacket/28354788/buy?utm_source=social_share_pdp&amp;utm_medium=deeplink&amp;utm_campaign=social_share_pdp_deeplink on Myntra
+
+H&amp;M Teddy Jackets http://www.myntra.com/mailers/topwear/h&amp;m/h&amp;m-teddy-jackets/30760731/buy?utm_source=social_share_pdp&amp;utm_medium=deeplink&amp;utm_campaign=social_share_pdp_deeplink on Myntra
+
+H&amp;M Women Small Crossbody Bag http://www.myntra.com/mailers/bags/h&amp;m/h&amp;m-women-small-crossbody-bag/30134770/buy?utm_source=social_share_pdp&amp;utm_medium=deeplink&amp;utm_campaign=social_share_pdp_deeplink on Myntra
+---
+DO NOT BUY THESE TEDDY JACKETS. I bought them a month ago and was sooo disappointed by the quality. It looked like it has been picked up from rag. I felt if I had to buy such bad quality I could easily find it in flee market at cheaper prices ew
+---
+Ohh.. Which one did you got? Cuz I have used one of the variants previously and quite liked the quality
+---
+It's the same one you've linked. The second one specifically.
+---
+Ohh got it. Thanks for the heads up
+---
+Can I get it from h&amp;m original website ....as their sale is also coming in two days....or unki qualities bhi jyada acchi hoti hain
+---
+Imo h&amp;m site sales are disappointing
+---
+Then which brand hoodie have best quality and also affordable
+---
+Check max and amazon symbol.
+---
+I'm planning to wait for EORS... It'll probably start from the 2nd week of December.
+---
+Nothing can beat eors prices 😮‍💨
+---
+Exactly... That's why just adding products to the wishlist rn
+---
+BBW is on sale, esp w coupons and supercoins, u can get mists/lotions/shower gels for 500-600
+---
+Hi pls can you share how to? Really need lotions.
+---
+Jst search for bath and body works and sort by discount, thn add to cart and apply the coupon BEAUTYREWARDS and it will also give you options to use your supercoins( this could be account specific as well), also the coupon is not available for everything but most of the products.
+---
+Howw
+---
+https://preview.redd.it/ejpvype12e3e1.jpeg?width=1290&amp;format=pjpg&amp;auto=webp&amp;s=f45194d300d496cdc25a0eb21fb890c77833a6b3
+
+See🥰
+---
+Bath&amp;body works.. i bought shower gels at 540 ish
+---
+how😭
+---
+Howwww
+---
+item in my wishlist actually got expensive😭😭😭
+i wanted to gift it to my gf
+---
+If possible just wait for 10 more days... It'll most likely go on discount during EORS... Then you can purchase it.
+---
+Is bath &amp; body works gonna be on that sale too ? Wanna buy some mists
+---
+Thank you ji🙏
+---
+You can check zink london website amazing sale is going on under 399
+---
+How is the quality?
+---
+I need BBW candles🤞
+---
+Same! I'm hoping there's a candle day sale on the BBW website and very much looking forward to their Semi-Annual sale. At that time, prices are good on Myntra too!
+---
+is b1g1 a good deal on 3 wick candles?
+---
+Not for me. B1G1 is essentially 50% off and we'd get about 60-70% off during Semi Annual sale.
+---
+got it! any clue when that's coming?
+---
+Semi Annual sales happen twice a year- I believe in June and December. Mostly the end of those months.
+
+Candle day (in the US) happens sometime on the 1st or 2nd week of December but no idea if it'll happen in India:(
+
+And this Friday (29th Nov) is Black Friday in the US so I'm hoping there is a sale in India as well.
+---
+It should be around 700-800 to be considered a good deal. Some candles are priced at 500/- on myntra during the sales.
+---
+Wait for candle day sales!
+---
+Hello! This is totally unrelated but since I’m an individual who loveees candles but is wary of problematic candles I highly do not recommend BBW candles. They contain paraffin wax which is really toxic and produce carcinogens. So a heads up!
+---
+Yep! I have forgotten about this case. Thanks for reminding. Can you suggest any better alternatives?
+---
+Yup! I recently bought a few candles as the winters are approaching and for gifting purposes too. I bought them from Alviya’s apothecary, they’re on Instagram. And trust me I’m just feeling so much fomo as to why didn’t I find her earlier!! They’re soy wax candles and the scents are too good🤌🤌
+---
+Laneige is on sale, especially if you have supercoins
+---
+Links?
+---
+For the product?
+---
+It's not showing for me 😭
+---
+I haven't got anything. I'll wait for bigger sales for the perfume prices to go down.
+
+For makeup and skincare I got them from Nykaa.
+---
+Remind me! 2days
+---
+I will be messaging you in 2 days on [**2024-11-29 06:30:54 UTC**](http://www.wolframalpha.com/input/?i=2024-11-29%2006:30:54%20UTC%20To%20Local%20Time) to remind you of [**this link**](https://www.reddit.com/r/IndianBeautyDeals/comments/1h0vrhe/anything_worth_buying_on_myntra_now_that_their/lz7emx2/?context=3)
+
+[**CLICK THIS LINK**](https://www.reddit.com/message/compose/?to=RemindMeBot&amp;subject=Reminder&amp;message=%5Bhttps%3A%2F%2Fwww.reddit.com%2Fr%2FIndianBeautyDeals%2Fcomments%2F1h0vrhe%2Fanything_worth_buying_on_myntra_now_that_their%2Flz7emx2%2F%5D%0A%0ARemindMe%21%202024-11-29%2006%3A30%3A54%20UTC) to send a PM to also be reminded and to reduce spam.
+
+^(Parent commenter can ) [^(delete this message to hide from others.)](https://www.reddit.com/message/compose/?to=RemindMeBot&amp;subject=Delete%20Comment&amp;message=Delete%21%201h0vrhe)
+
+*****
+
+|[^(Info)](https://www.reddit.com/r/RemindMeBot/comments/e1bko7/remindmebot_info_v21/)|[^(Custom)](https://www.reddit.com/message/compose/?to=RemindMeBot&amp;subject=Reminder&amp;message=%5BLink%20or%20message%20inside%20square%20brackets%5D%0A%0ARemindMe%21%20Time%20period%20here)|[^(Your Reminders)](https://www.reddit.com/message/compose/?to=RemindMeBot&amp;subject=List%20Of%20Reminders&amp;message=MyReminders%21)|[^(Feedback)](https://www.reddit.com/message/compose/?to=Watchful1&amp;subject=RemindMeBot%20Feedback)|
+|-|-|-|-|
+---
+Remind me! 1day",19,,deferred_buying_timing,price_deferral,Things i wanted are not even on any discount. Will wait for dec eors for sure
+reddit,anything worth in myntra,2024-11-27,"Anything worth buying on myntra now that their sale is on?
+
+Same as title.
+
+COMMENTS:
+Things i wanted are not even on any discount. Will wait for dec eors for sure
+---
+From 7th or 8th Dec
+---
+![gif](giphy|nGwUR2miMBY4lXfLkt)
+---
+I got a cross body bag and Jackets from H&amp;M. Their jacket quality is good.
+---
+Hey could u pls share the links or pics of what all u got? Thankyou 🤍
+---
+H&amp;M Teddy Jacket http://www.myntra.com/mailers/topwear/h&amp;m/h&amp;m-teddy-jacket/28354788/buy?utm_source=social_share_pdp&amp;utm_medium=deeplink&amp;utm_campaign=social_share_pdp_deeplink on Myntra
+
+H&amp;M Teddy Jackets http://www.myntra.com/mailers/topwear/h&amp;m/h&amp;m-teddy-jackets/30760731/buy?utm_source=social_share_pdp&amp;utm_medium=deeplink&amp;utm_campaign=social_share_pdp_deeplink on Myntra
+
+H&amp;M Women Small Crossbody Bag http://www.myntra.com/mailers/bags/h&amp;m/h&amp;m-women-small-crossbody-bag/30134770/buy?utm_source=social_share_pdp&amp;utm_medium=deeplink&amp;utm_campaign=social_share_pdp_deeplink on Myntra
+---
+DO NOT BUY THESE TEDDY JACKETS. I bought them a month ago and was sooo disappointed by the quality. It looked like it has been picked up from rag. I felt if I had to buy such bad quality I could easily find it in flee market at cheaper prices ew
+---
+Ohh.. Which one did you got? Cuz I have used one of the variants previously and quite liked the quality
+---
+It's the same one you've linked. The second one specifically.
+---
+Ohh got it. Thanks for the heads up
+---
+Can I get it from h&amp;m original website ....as their sale is also coming in two days....or unki qualities bhi jyada acchi hoti hain
+---
+Imo h&amp;m site sales are disappointing
+---
+Then which brand hoodie have best quality and also affordable
+---
+Check max and amazon symbol.
+---
+I'm planning to wait for EORS... It'll probably start from the 2nd week of December.
+---
+Nothing can beat eors prices 😮‍💨
+---
+Exactly... That's why just adding products to the wishlist rn
+---
+BBW is on sale, esp w coupons and supercoins, u can get mists/lotions/shower gels for 500-600
+---
+Hi pls can you share how to? Really need lotions.
+---
+Jst search for bath and body works and sort by discount, thn add to cart and apply the coupon BEAUTYREWARDS and it will also give you options to use your supercoins( this could be account specific as well), also the coupon is not available for everything but most of the products.
+---
+Howw
+---
+https://preview.redd.it/ejpvype12e3e1.jpeg?width=1290&amp;format=pjpg&amp;auto=webp&amp;s=f45194d300d496cdc25a0eb21fb890c77833a6b3
+
+See🥰
+---
+Bath&amp;body works.. i bought shower gels at 540 ish
+---
+how😭
+---
+Howwww
+---
+item in my wishlist actually got expensive😭😭😭
+i wanted to gift it to my gf
+---
+If possible just wait for 10 more days... It'll most likely go on discount during EORS... Then you can purchase it.
+---
+Is bath &amp; body works gonna be on that sale too ? Wanna buy some mists
+---
+Thank you ji🙏
+---
+You can check zink london website amazing sale is going on under 399
+---
+How is the quality?
+---
+I need BBW candles🤞
+---
+Same! I'm hoping there's a candle day sale on the BBW website and very much looking forward to their Semi-Annual sale. At that time, prices are good on Myntra too!
+---
+is b1g1 a good deal on 3 wick candles?
+---
+Not for me. B1G1 is essentially 50% off and we'd get about 60-70% off during Semi Annual sale.
+---
+got it! any clue when that's coming?
+---
+Semi Annual sales happen twice a year- I believe in June and December. Mostly the end of those months.
+
+Candle day (in the US) happens sometime on the 1st or 2nd week of December but no idea if it'll happen in India:(
+
+And this Friday (29th Nov) is Black Friday in the US so I'm hoping there is a sale in India as well.
+---
+It should be around 700-800 to be considered a good deal. Some candles are priced at 500/- on myntra during the sales.
+---
+Wait for candle day sales!
+---
+Hello! This is totally unrelated but since I’m an individual who loveees candles but is wary of problematic candles I highly do not recommend BBW candles. They contain paraffin wax which is really toxic and produce carcinogens. So a heads up!
+---
+Yep! I have forgotten about this case. Thanks for reminding. Can you suggest any better alternatives?
+---
+Yup! I recently bought a few candles as the winters are approaching and for gifting purposes too. I bought them from Alviya’s apothecary, they’re on Instagram. And trust me I’m just feeling so much fomo as to why didn’t I find her earlier!! They’re soy wax candles and the scents are too good🤌🤌
+---
+Laneige is on sale, especially if you have supercoins
+---
+Links?
+---
+For the product?
+---
+It's not showing for me 😭
+---
+I haven't got anything. I'll wait for bigger sales for the perfume prices to go down.
+
+For makeup and skincare I got them from Nykaa.
+---
+Remind me! 2days
+---
+I will be messaging you in 2 days on [**2024-11-29 06:30:54 UTC**](http://www.wolframalpha.com/input/?i=2024-11-29%2006:30:54%20UTC%20To%20Local%20Time) to remind you of [**this link**](https://www.reddit.com/r/IndianBeautyDeals/comments/1h0vrhe/anything_worth_buying_on_myntra_now_that_their/lz7emx2/?context=3)
+
+[**CLICK THIS LINK**](https://www.reddit.com/message/compose/?to=RemindMeBot&amp;subject=Reminder&amp;message=%5Bhttps%3A%2F%2Fwww.reddit.com%2Fr%2FIndianBeautyDeals%2Fcomments%2F1h0vrhe%2Fanything_worth_buying_on_myntra_now_that_their%2Flz7emx2%2F%5D%0A%0ARemindMe%21%202024-11-29%2006%3A30%3A54%20UTC) to send a PM to also be reminded and to reduce spam.
+
+^(Parent commenter can ) [^(delete this message to hide from others.)](https://www.reddit.com/message/compose/?to=RemindMeBot&amp;subject=Delete%20Comment&amp;message=Delete%21%201h0vrhe)
+
+*****
+
+|[^(Info)](https://www.reddit.com/r/RemindMeBot/comments/e1bko7/remindmebot_info_v21/)|[^(Custom)](https://www.reddit.com/message/compose/?to=RemindMeBot&amp;subject=Reminder&amp;message=%5BLink%20or%20message%20inside%20square%20brackets%5D%0A%0ARemindMe%21%20Time%20period%20here)|[^(Your Reminders)](https://www.reddit.com/message/compose/?to=RemindMeBot&amp;subject=List%20Of%20Reminders&amp;message=MyReminders%21)|[^(Feedback)](https://www.reddit.com/message/compose/?to=Watchful1&amp;subject=RemindMeBot%20Feedback)|
+|-|-|-|-|
+---
+Remind me! 1day",19,,purchase_delay_and_sale_timing,price_deferral,Things i wanted are not even on any discount. Will wait for dec eors for sure
+reddit,myncash,2026-07-14,"136 rupees Myncash going to expire starting tomorrow, pls suggest something to buy under 200-300
+
+Same as title
+
+COMMENTS:
+Lip balm dot and keys
+---
+Thr r these decent crop T-shirts u can get
+---
+envy perfume   
+soap bars
+---
+Sampoo body wash moisturizer, jwellery t shirts etc
+---
+Ib kro link deta hu under 199 products ki
+---
+Compact
+---
+You can buy facewash,lipbalm, toothpaste, underarm rollon
+---
+That facemask and scrubber on other side thing
+---
+Trunks.",1,,purchase_timing_urgency,price_sentiment_generic,"136 rupees Myncash going to expire starting tomorrow, pls suggest something to buy under 200-300"
+reddit,myntra_consider buyibng,2026-06-02,"Weird algorithm
+
+Myntra shows my preference priced high than the other options.  
+Like suppose - I wishlisted a bag in color white, and there are other options black and brown.  
+The one I wish listed will show same price as the black and brown one when I am browsing from the wishlist but when I click on it , it’s price is 500 rs more.  
+Happens with a lot of different products.  
+Like my jeans size is 1900 and literally all other sizes are 1500 .  
+Anyone facing the same?",1,,wishlist_price_discrepancy,price_sentiment_generic,"I wishlisted a bag in color white, and there are other options black and brown. The one I wish listed will show same price as the black and brown one when I am browsing from the wishlist but when I click on it, it's price is 500 rs more."
+reddit,what is in myntra cart,2021-10-02,"What's in your Myntra cart??
+
+Myntra sale seems to be actually a nice sale. I can assume everyone has something in their cart. What's in your cart? What's your budget?
+
+I have a ton of clothes, some &amp; makeup products, and a pair of boots. Clothes are from H&amp;M &amp; Sassafras mostly. Makeup - Mac Go Play blushes &amp; an Essense blush. It all is rounding up to like 12k. I want to cut it in half but let's seee!
+
+What's in your cart??
+
+COMMENTS:
+I bought things that were on on my wishlist / to-buy list and it was the perfect time to restock them because saaale! I usually only buy a new product when my old one is over 
+
+I got 
+* The Body Shop Vitamin E Eye Cream (replacing my Éclat eye cream)
+* Simple Moisturising Face Wash (my 3rd tube!)
+
+* Bath &amp; Body Works Sunset Glow Body Mist
+* Laneige Lip Sleeping Mask Berry (also my 3rd time purchasing!) 
+* Bath &amp; Body Works Japanese Cherry Blossoms Candle (for my mother)
+* And a Zelocity by Zivame sports bra (my first time trying Zivame!)
+
+The only thing I forgot is a nude lipstick. All of mine are almost over and I need to restock them!
+---
+I’ve only used one mist but my friends have used a few so I know they’re good! They’ve used I think Warm Vanilla Sugar and Japanese Cherry Blossoms! I think both smell good. I have used a Vanilla body cream. Smell is great but as a cream is not that great 😂
+
+The one I’ve used is A Thousand Wishes. It smells sort of fruity and is really good. The staying power is also good! I sweat a LOT like just if I move around my room rearranging things, I’ll sweat. So the mist does a good job with the he scent. I’ve now ordered the Sunset one because someone on the ISCA sub said it’s good and smells like caramel!
+
+Wrt best scent I think it’s personal preference. For example, I don’t like musky and flowery scents but I’m okay with fruity and vanilla/chocolate types!
+---
+I have ordered sweatshirts as winter is coming
+---
+Stocking my minimalist serums and couple of formal pants.
+---
+Do you use the salicylic 2% from minimalist? I've heard some negative reviews on here... I'm confused between this and the derma co one
+---
+Yes I do I have combination skin with extremely oil t zone. It works good to curb whiteheads, but we have to use it for long time to work on blackheads. I also use it only 2 times a week and doesn't layer it with any other actives. 
+It does make my skin sensitive, I usually use a fruit actives facewash from requil. Whenever I use them together my skin becomes sensitive, so I replaced it with my simple facewash. Hope it helps!!
+---
+Great thanks! I have combination skin too... This is majorly helpful
+---
+Innisfree blueberry toner. 
+Some lounge pants from Tokyo talkies
+Trousers from sassafras
+Heels from Allen Solly
+---
+Mac lipsticks
+---
+Took advantage of minimalist offer and ordered a bunch of them , a few night suits as most of my current wear are riddled with holes..lol (didn't get my sizes so ordered one size large/small where ever available so fingers crossed!)
+
+Also have one Vero moda top &amp; one Only top in my cart , contemplating to splurge or not. I am still browsing a bit of accessories...just a simple chain and/or ear rings...so let's see.
+---
+Could u please mention the brand of night suites that are quite durable?  TIA
+---
+Hey...I mostly buy Max and dressberry brands. Max is pretty affordable during sales and decent quality although I feel the quality 5 years back was much better. I have only 2 from dressberry and they are decent too. 
+
+Max is my favorite of the two.
+---
+Noted . Thankyou❤
+---
+Got my hands on the MAC BOGO offer and bought two matte lipsticks Sin (repurchase as my mom loves it and finished the first one) and Marrakesh (loved the shade on screen and I hope it turns out to be even better on my skin). Lol I love myntra for such amazing offers. Other than that just bought two kurtas as not thinking of buying anything more now and pile things up till I clean my vanity and wardrobe.
+---
+You can wait for Myntra end of reason sale - December ending.
+---
+how much off does it go then any clue?",17,,wishlist_and_sale_timing,price_sentiment_generic,I bought things that were on on my wishlist / to-buy list and it was the perfect time to restock them because saaale!
+reddit,wishlist_rant,2026-05-01,"I absolutely hate it when myntra does this🥲 (Rant)
+
+I’ve noticed something really frustrating with Myntra. Every time I add a product to my wishlist or cart, planning to buy it after a few days or during a sale, the price suddenly increases, or the product becomes unavailable in my area, or just goes out of stock for a long time. It feels way too coincidental.
+
+Sometimes I get impatient and end up buying the same product from another platform at a higher price. But then, the very next day, when I check Myntra again, it’s suddenly back in stock and even available at a lower, discounted price. I genuinely don’t understand how or why this keeps happening, but it’s extremely annoying. I honestly hate this experience with Myntra, I absolutely hate myntra!😭
+
+COMMENTS:
+This brand glitchez doesnt deliver any new styles to my pincode dude till like 3-4 months , then when its old it starts delivering 😭
+---
+That sucks
+---
+bro same shit happens all of a sudden the product is not available for my pincode. I have stopped buying from myntra honestly ass app",17,,wishlist_price_timing_strategy,price_deferral,"Every time I add a product to my wishlist or cart, planning to buy it after a few days or during a sale, the price suddenly increases, or the product becomes unavailable in my area"

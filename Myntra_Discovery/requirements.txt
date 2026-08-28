@@ -1,0 +1,11 @@
+google-play-scraper==1.2.7
+app-store-scraper==0.3.5
+# app-store-scraper pins old requests/urllib3 that are broken on Python 3.12;
+# override with modern versions (the scraper only makes basic requests calls).
+requests>=2.31
+urllib3>=2
+google-api-python-client==2.199.0
+python-dotenv==1.2.3
+anthropic==1.0.0
+streamlit>=1.40
+

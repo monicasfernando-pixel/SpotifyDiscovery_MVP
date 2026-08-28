@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discovery Engine- Myntra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#3A1D3D;--ink-soft:#6B5468;--canvas:#F7F4EF;--card:#FFFFFF;--line:#E7DFD4;
+    --marigold:#E8A317;--marigold-deep:#B67A05;--teal:#0E7C6B;--clay:#B45309;--slate:#5B5568;--rose:#9B2C4A;
+    --shadow:0 1px 2px rgba(58,29,61,.06),0 8px 24px rgba(58,29,61,.06);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0}
+  body{background:var(--canvas);color:var(--ink);font-family:'Instrument Sans',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;overflow:hidden}
+  .app{display:flex;flex-direction:column;min-height:100vh;height:100vh;width:100%}
+  .wrap{width:100%;max-width:none;margin:0;padding:0 32px}
+  @media(min-width:1400px){.wrap{padding:0 48px}}
+  header{background:var(--card);flex-shrink:0}
+  .bar{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;width:100%;margin:0;flex-wrap:wrap;gap:10px}
+  @media(min-width:1400px){.bar{padding:14px 48px}}
+  .brand{display:flex;align-items:baseline;gap:10px}
+  .brand b{font-family:'Fraunces',serif;font-weight:600;font-size:20px;letter-spacing:-.01em}
+  .brand span{font-size:12px;color:var(--ink-soft);font-family:'Spline Sans Mono',monospace;letter-spacing:.04em}
+  .btn{appearance:none;border:1px solid var(--ink);background:var(--ink);color:#fff;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:13px;padding:8px 14px;border-radius:10px;cursor:pointer;box-shadow:var(--shadow)}
+  .btn:hover{background:var(--marigold-deep);border-color:var(--marigold-deep)}
+  .btn:disabled{opacity:.55;cursor:wait}
+  .meta{font-family:'Spline Sans Mono',monospace;font-size:12px;color:var(--ink-soft)}
+  .actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .status{font-family:'Spline Sans Mono',monospace;font-size:11px;color:var(--ink-soft);max-width:52ch}
+
+  .tabbar{display:flex;gap:8px;padding:8px 32px 0;background:var(--card);border-bottom:2px solid var(--line);flex-shrink:0;overflow-x:auto}
+  @media(min-width:1400px){.tabbar{padding:8px 48px 0}}
+  .tab{appearance:none;background:#fff;border:0;border-bottom:3px solid transparent;color:var(--ink-soft);font-family:'Instrument Sans',sans-serif;font-size:17px;font-weight:600;height:52px;padding:0 24px;margin-bottom:-2px;cursor:pointer;white-space:nowrap;border-radius:10px 10px 0 0}
+  .tab:hover{color:var(--ink);background:#faf7f2}
+  .tab[aria-selected="true"]{background:var(--marigold);color:var(--ink);border-bottom-color:var(--teal)}
+
+  .panels{flex:1;overflow:auto;min-height:0;background:var(--canvas)}
+  .panel{display:none;padding:28px 0 48px;min-height:100%}
+  .panel.is-on{display:block}
+
+  .hero{padding:8px 0 24px}
+  .eyebrow{font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--marigold-deep);margin:0 0 12px}
+  h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,3.4vw,44px);line-height:1.08;letter-spacing:-.02em;margin:0 0 14px;max-width:none}
+  .lede{font-size:16px;color:var(--ink-soft);max-width:none;margin:0;width:min(90ch,100%)}
+
+  h2{font-family:'Fraunces',serif;font-weight:600;font-size:26px;letter-spacing:-.01em;margin:0 0 6px}
+  .sub{color:var(--ink-soft);font-size:15px;margin:0 0 22px;max-width:none;width:min(96ch,100%)}
+
+  .funnel{display:flex;flex-direction:column;gap:12px;max-width:none;width:100%}
+  .frow{display:grid;grid-template-columns:minmax(240px,1.6fr) minmax(200px,1fr);align-items:center;gap:20px}
+  @media(max-width:800px){.frow{grid-template-columns:1fr}}
+  .fbar{height:48px;border-radius:10px;display:flex;align-items:center;padding:0 16px;color:#fff;font-weight:600;font-size:14px;white-space:nowrap;box-shadow:var(--shadow);transition:width .9s cubic-bezier(.2,.8,.2,1);overflow:hidden;min-width:8%}
+  .fnote{font-size:14px;color:var(--ink-soft)}
+  .fnote b{color:var(--ink);font-family:'Spline Sans Mono',monospace;font-weight:500}
+
+  .sources{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+  @media(max-width:900px){.sources{grid-template-columns:1fr 1fr}}
+  .src{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow);min-width:0}
+  .src .k{font-size:12px;color:var(--ink-soft);font-family:'Spline Sans Mono',monospace}
+  .src .v{font-family:'Fraunces',serif;font-size:22px;font-weight:600;margin-top:2px}
+  .src .r{font-size:11px;color:var(--marigold-deep);font-family:'Spline Sans Mono',monospace;margin-top:2px}
+
+  /* theme bars */
+  .themes{display:flex;flex-direction:column;gap:14px;max-width:none;width:100%}
+  .theme{display:grid;grid-template-columns:220px 1fr 56px;align-items:center;gap:16px}
+  @media(max-width:620px){.theme{grid-template-columns:130px 1fr 36px}}
+  .theme .lbl{font-size:14px;font-weight:500}
+  .theme .track{background:#efe9e0;border-radius:8px;height:26px;overflow:hidden}
+  .theme .fill{height:100%;border-radius:8px;transition:width .8s ease}
+  .theme .cnt{font-family:'Spline Sans Mono',monospace;font-size:14px;text-align:right;color:var(--ink-soft)}
+
+  /* honesty callout */
+  .callout{background:#fff;border:1px solid var(--line);border-left:4px solid var(--marigold);border-radius:12px;padding:28px 32px;box-shadow:var(--shadow);max-width:none;width:100%}
+  .callout h3{margin:0 0 10px;font-family:'Fraunces',serif;font-size:19px;font-weight:600}
+  .compare{display:flex;gap:14px;flex-wrap:wrap;margin:16px 0}
+  .cbox{flex:1;min-width:180px;border:1px solid var(--line);border-radius:10px;padding:14px}
+  .cbox .big{font-family:'Fraunces',serif;font-size:34px;font-weight:600;line-height:1}
+  .cbox .cap{font-size:12.5px;color:var(--ink-soft);margin-top:6px}
+  .cbox.was .big{color:var(--slate)}
+  .cbox.now .big{color:var(--teal)}
+  .callout p{font-size:14px;color:var(--ink);margin:8px 0 0}
+
+  /* quotes */
+  .quotes{columns:unset;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:none;width:100%}
+  @media(max-width:1200px){.quotes{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:640px){.quotes{grid-template-columns:1fr}}
+  .q{break-inside:avoid;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:0;box-shadow:var(--shadow)}
+  .q p{margin:0 0 10px;font-size:14.5px;line-height:1.5}
+  .q .tag{display:inline-flex;align-items:center;gap:7px;font-family:'Spline Sans Mono',monospace;font-size:11px;color:var(--ink-soft)}
+  .q .swatch{width:9px;height:9px;border-radius:2px}
+
+  /* how it works */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:s}
+  @media(max-width:760px){.steps{grid-template-columns:1fr 1fr}}
+  @media(max-width:440px){.steps{grid-template-columns:1fr}}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:var(--shadow);position:relative}
+  .step .n{font-family:'Spline Sans Mono',monospace;font-size:12px;color:var(--marigold-deep);font-weight:500}
+  .step h4{margin:6px 0 6px;font-family:'Fraunces',serif;font-size:16px;font-weight:600}
+  .step p{margin:0;font-size:13px;color:var(--ink-soft)}
+  .arrow{color:var(--line)}
+
+  /* brief questions */
+  .qrows{display:flex;flex-direction:column;gap:10px;width:100%}
+  .qrow{display:grid;grid-template-columns:minmax(220px,.92fr) minmax(240px,1.35fr);gap:18px 28px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;box-shadow:var(--shadow)}
+  @media(max-width:800px){.qrow{grid-template-columns:1fr;gap:8px;padding:14px 16px}}
+  .qask{margin:0;font-weight:600;font-size:14.5px;line-height:1.4}
+  .qans{margin:0;display:flex;align-items:flex-start;gap:12px;min-width:0}
+  .qans p{margin:0;font-size:14.5px;color:var(--ink);line-height:1.45}
+  .conf{display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0;padding-top:3px;min-width:52px}
+  .conf .dot{width:11px;height:11px;border-radius:50%;display:block;box-shadow:0 0 0 2px #fff,0 0 0 3px currentColor}
+  .conf.high{color:var(--teal)} .conf.high .dot{background:var(--teal)}
+  .conf.med{color:var(--clay)} .conf.med .dot{background:var(--clay)}
+  .conf.low{color:var(--slate)} .conf.low .dot{background:var(--slate)}
+  .conf span{font-family:'Spline Sans Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.02em;color:currentColor}
+
+  /* opportunities 2×2 */
+  .opp-fig{margin:0;width:100%}
+  .opp-chart{width:100%;height:auto;display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
+  .opp-chart text{font-family:'Instrument Sans',system-ui,sans-serif;fill:var(--ink);pointer-events:none}
+  .opp-chart .axis-name{font-family:'Spline Sans Mono',monospace;font-size:12px;fill:var(--ink-soft);letter-spacing:.04em}
+  .opp-chart .axis-end{font-family:'Spline Sans Mono',monospace;font-size:11px;fill:var(--ink-soft)}
+  .opp-chart .pt-lbl{font-size:12.5px;font-weight:500}
+  .opp-chart .pt{cursor:default;outline:none}
+  .opp-chart .pt:focus-visible .hit{stroke:var(--marigold);stroke-width:3}
+  .opp-legend{display:flex;flex-wrap:wrap;gap:10px 22px;margin:16px 0 0;padding:0;list-style:none}
+  .opp-legend li{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink)}
+  .opp-legend .mark{width:14px;height:14px;flex-shrink:0}
+  .opp-legend .mark.pursue{background:var(--teal);border-radius:50%}
+  .opp-legend .mark.secondary{background:var(--clay);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+  .opp-legend .mark.drop{background:var(--slate);border-radius:2px}
+  .opp-legend .key{font-family:'Spline Sans Mono',monospace;font-size:11px;color:var(--ink-soft)}
+  .opp-cap{font-size:13px;color:var(--ink-soft);margin:14px 0 0;width:min(92ch,100%)}
+  @media(max-width:720px){
+    .tab{font-size:15px;padding:0 14px;height:46px}
+    .opp-chart .pt-lbl{font-size:11px}
+  }
+
+  .note{font-size:13px;color:var(--ink-soft);background:#faf5ec;border:1px solid #f0e2c4;border-radius:10px;padding:14px 16px;max-width:none;width:100%;margin-top:20px}
+  footer{border-top:1px solid var(--line);padding:14px 0;font-size:12.5px;color:var(--ink-soft);background:var(--card);flex-shrink:0}
+  code{font-family:'Spline Sans Mono',monospace;font-size:12px;background:#efe9e0;padding:2px 6px;border-radius:5px}
+  :focus-visible{outline:2px solid var(--marigold);outline-offset:2px}
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+  <div class="bar">
+    <div class="brand"><b>Discovery Engine- Myntra</b></div>
+    <div class="actions">
+      <div>
+        <div class="meta" id="meta">corpus 2,821 · relevant 104 · cached extract</div>
+        <div class="status" id="cache-status">Showing last extracted snapshot</div>
+      </div>
+      <button type="button" class="btn" id="scrape-btn">Scrape again</button>
+    </div>
+  </div>
+</header>
+
+<nav class="tabbar" role="tablist" aria-label="Findings sections">
+  <button type="button" class="tab" role="tab" id="tab-corpus" aria-controls="panel-corpus" aria-selected="true" data-tab="panel-corpus">Corpus</button>
+  <button type="button" class="tab" role="tab" id="tab-themes" aria-controls="panel-themes" aria-selected="false" data-tab="panel-themes">Themes</button>
+  <button type="button" class="tab" role="tab" id="tab-questions" aria-controls="panel-questions" aria-selected="false" data-tab="panel-questions">Questions</button>
+  <button type="button" class="tab" role="tab" id="tab-opportunities" aria-controls="panel-opportunities" aria-selected="false" data-tab="panel-opportunities">Opportunities</button>
+  <button type="button" class="tab" role="tab" id="tab-honesty" aria-controls="panel-honesty" aria-selected="false" data-tab="panel-honesty">Honesty check</button>
+  <button type="button" class="tab" role="tab" id="tab-verbatims" aria-controls="panel-verbatims" aria-selected="false" data-tab="panel-verbatims">Verbatims</button>
+  <button type="button" class="tab" role="tab" id="tab-engine" aria-controls="panel-engine" aria-selected="false" data-tab="panel-engine">Engine</button>
+</nav>
+
+<div class="panels">
+<section class="panel is-on wrap" id="panel-corpus" role="tabpanel" aria-labelledby="tab-corpus">
+  <div class="hero">
+    <p class="eyebrow">AI-powered discovery · Part 1</p>
+    <h1>What public conversation actually says about unbought wishlists.</h1>
+    <p class="lede">A two-stage pipeline collected public reviews and threads about Myntra (Play Store and App Store v1+v2 merged, plus YouTube and Reddit), then classified each one for genuine wishlist-to-purchase behaviour — not sentiment. The headline finding is as much about what <em>isn't</em> there as what is: explicit save-then-abandon narrative is rare in short-form review text.</p>
+  </div>
+  <h2 id="funnel-title">From 2,821 merged items to 104 with real signal</h2>
+  <p class="sub" id="funnel-sub">Play Store and App Store v1+v2 were unioned and deduped, then combined with YouTube and Reddit. Most review text is about delivery, refunds, and app bugs. A strict LLM relevance pass — not keyword matching — found the small slice that actually describes saving, deferring, or abandoning a purchase.</p>
+  <div class="funnel" id="funnel"></div>
+  <div class="sources" id="sources"></div>
+  <div class="note" id="reddit-note"></div>
+</section>
+
+<section class="panel wrap" id="panel-themes" role="tabpanel" aria-labelledby="tab-themes">
+  <h2>What the relevant items are about</h2>
+  <p class="sub">Free-form tags from the classifier, grouped into canonical themes. Price and cross-platform comparison dominate — but see the honesty check before reading too much into raw counts.</p>
+  <div class="themes" id="themes"></div>
+</section>
+
+<section class="panel wrap" id="panel-questions" role="tabpanel" aria-labelledby="tab-questions">
+  <h2>The brief's questions, answered by the engine alone</h2>
+  <p class="sub">Each answer is constrained to what public reviews and threads actually surfaced. Where the corpus is silent, the row says so — it is not filled in from interviews or product intuition. Confidence is how strongly the relevant slice supports the line, not how important the question is.</p>
+  <div class="qrows">
+    <div class="qrow">
+      <p class="qask">Why do users add to wishlist?</p>
+      <div class="qans">
+        <span class="conf med" aria-label="Confidence: medium"><i class="dot" aria-hidden="true"></i><span>medium</span></span>
+        <p>Deferred intent — a price/occasion holding pen, not impulse.</p>
+      </div>
+    </div>
+    <div class="qrow">
+      <p class="qask">What prevents purchase?</p>
+      <div class="qans">
+        <span class="conf high" aria-label="Confidence: high"><i class="dot" aria-hidden="true"></i><span>high</span></span>
+        <p>Price gap vs other platforms; size unavailable in their size.</p>
+      </div>
+    </div>
+    <div class="qrow">
+      <p class="qask">What uncertainties remain?</p>
+      <div class="qans">
+        <span class="conf med" aria-label="Confidence: medium"><i class="dot" aria-hidden="true"></i><span>medium</span></span>
+        <p>Whether the price is genuinely good, and whether their size stays in stock.</p>
+      </div>
+    </div>
+    <div class="qrow">
+      <p class="qask">What causes postponement?</p>
+      <div class="qans">
+        <span class="conf high" aria-label="Confidence: high"><i class="dot" aria-hidden="true"></i><span>high</span></span>
+        <p>Waiting for a sale; size out of stock; comparing elsewhere.</p>
+      </div>
+    </div>
+    <div class="qrow">
+      <p class="qask">How do users compare shortlisted products?</p>
+      <div class="qans">
+        <span class="conf high" aria-label="Confidence: high"><i class="dot" aria-hidden="true"></i><span>high</span></span>
+        <p>Cross-platform price checks (Amazon/Flipkart/Ajio) dominate.</p>
+      </div>
+    </div>
+    <div class="qrow">
+      <p class="qask">What info sought outside Myntra?</p>
+      <div class="qans">
+        <span class="conf high" aria-label="Confidence: high"><i class="dot" aria-hidden="true"></i><span>high</span></span>
+        <p>Prices on other apps; reviews/YouTube for fit and quality.</p>
+      </div>
+    </div>
+    <div class="qrow">
+      <p class="qask">Role of fit/size/styling/price/reviews/occasion/social validation?</p>
+      <div class="qans">
+        <span class="conf med" aria-label="Confidence: medium"><i class="dot" aria-hidden="true"></i><span>medium</span></span>
+        <p>Price, size and comparison strongly present; styling and social validation NOT strongly surfaced in public text.</p>
+      </div>
+    </div>
+    <div class="qrow">
+      <p class="qask">Wishlist as genuine intent vs bookmark?</p>
+      <div class="qans">
+        <span class="conf med" aria-label="Confidence: medium"><i class="dot" aria-hidden="true"></i><span>medium</span></span>
+        <p>Both — large unpruned lists used as bookmarks, alongside sale-triggered buying.</p>
+      </div>
+    </div>
+    <div class="qrow">
+      <p class="qask">How do behaviours differ across segments?</p>
+      <div class="qans">
+        <span class="conf low" aria-label="Confidence: low"><i class="dot" aria-hidden="true"></i><span>low</span></span>
+        <p>Not resolvable from public text alone — carried to interviews.</p>
+      </div>
+    </div>
+    <div class="qrow">
+      <p class="qask">What unmet needs recur?</p>
+      <div class="qans">
+        <span class="conf high" aria-label="Confidence: high"><i class="dot" aria-hidden="true"></i><span>high</span></span>
+        <p>Users repeatedly leave Myntra to verify price/value elsewhere before buying.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="panel wrap" id="panel-opportunities" role="tabpanel" aria-labelledby="tab-opportunities">
+  <h2>Where the engine would spend the next cycle</h2>
+  <p class="sub">A 2×2 of evidence strength (what the corpus actually supports) against estimated impact on wishlist→purchase. Verdict colour and shape travel together so the map stays readable without colour alone.</p>
+  <figure class="opp-fig">
+    <svg class="opp-chart" viewBox="0 0 1000 560" role="group" aria-labelledby="opp-chart-title">
+      <title id="opp-chart-title">Opportunity map: evidence strength versus estimated impact on wishlist to purchase</title>
+      <desc id="opp-chart-desc">Six opportunities plotted on a two-by-two grid. Pursue in the high-evidence high-impact quadrant: cross-platform price-leakage and an in-app good-price-or-time-to-buy signal. Secondary: size and fit availability clarity, and notification opt-out. Drop: trend staleness, and generic price sentiment.</desc>
+      <rect x="0" y="0" width="1000" height="560" fill="#FFFFFF" rx="12"/>
+      <!-- plot frame 96,36 → 780,468  (w=684, h=432) -->
+      <rect x="96" y="36" width="342" height="216" fill="#f4faf8"/>
+      <rect x="438" y="36" width="342" height="216" fill="#eef7f4"/>
+      <rect x="96" y="252" width="342" height="216" fill="#f7f4ef"/>
+      <rect x="438" y="252" width="342" height="216" fill="#faf7f2"/>
+      <line x1="438" y1="36" x2="438" y2="468" stroke="#E7DFD4" stroke-width="1.5" stroke-dasharray="5 5"/>
+      <line x1="96" y1="252" x2="780" y2="252" stroke="#E7DFD4" stroke-width="1.5" stroke-dasharray="5 5"/>
+      <rect x="96" y="36" width="684" height="432" fill="none" stroke="#E7DFD4" stroke-width="1.5" rx="4"/>
+      <!-- axes -->
+      <line x1="96" y1="468" x2="780" y2="468" stroke="#3A1D3D" stroke-width="1.5"/>
+      <line x1="96" y1="468" x2="96" y2="36" stroke="#3A1D3D" stroke-width="1.5"/>
+      <polygon points="780,468 772,464 772,472" fill="#3A1D3D"/>
+      <polygon points="96,36 92,44 100,44" fill="#3A1D3D"/>
+      <text class="axis-end" x="96" y="490" text-anchor="start">low</text>
+      <text class="axis-end" x="780" y="490" text-anchor="end">high</text>
+      <text class="axis-name" x="438" y="512" text-anchor="middle">Evidence strength (engine) →</text>
+      <text class="axis-end" x="84" y="468" text-anchor="end">low</text>
+      <text class="axis-end" x="84" y="48" text-anchor="end">high</text>
+      <text class="axis-name" text-anchor="middle" transform="rotate(-90 28 252)">Estimated impact on wishlist→purchase</text>
+      <!-- 1. Cross-platform price-leakage  high, high, pursue  (0.88, 0.90) -->
+      <g class="pt" tabindex="0" focusable="true" role="img" aria-label="Cross-platform price-leakage. High evidence, high impact. Pursue.">
+        <circle class="hit" cx="698" cy="79" r="16" fill="transparent"/>
+        <circle cx="698" cy="79" r="9" fill="#0E7C6B" stroke="#fff" stroke-width="2"/>
+        <text class="pt-lbl" x="698" y="58" text-anchor="middle">Cross-platform price-leakage</text>
+      </g>
+      <!-- 2. In-app signal  high, high, pursue  (0.76, 0.78) -->
+      <g class="pt" tabindex="0" focusable="true" role="img" aria-label="In-app is this a good price or time to buy signal. High evidence, high impact. Pursue.">
+        <circle class="hit" cx="616" cy="131" r="16" fill="transparent"/>
+        <circle cx="616" cy="131" r="9" fill="#0E7C6B" stroke="#fff" stroke-width="2"/>
+        <text class="pt-lbl" x="598" y="114" text-anchor="end">In-app “good price/time?” signal</text>
+      </g>
+      <!-- 3. Size/fit  medium, medium-high, secondary  (0.50, 0.72) -->
+      <g class="pt" tabindex="0" focusable="true" role="img" aria-label="Size and fit availability clarity. Medium evidence, medium-high impact. Secondary.">
+        <circle class="hit" cx="438" cy="157" r="16" fill="transparent"/>
+        <polygon points="438,146 449,157 438,168 427,157" fill="#B45309" stroke="#fff" stroke-width="2"/>
+        <text class="pt-lbl" x="456" y="178" text-anchor="start">Size/fit availability clarity</text>
+      </g>
+      <!-- 4. Notification  medium, medium, secondary  (0.48, 0.50) -->
+      <g class="pt" tabindex="0" focusable="true" role="img" aria-label="Notification opt-out or signal ignored. Medium evidence, medium impact. Secondary.">
+        <circle class="hit" cx="424" cy="252" r="16" fill="transparent"/>
+        <polygon points="424,241 435,252 424,263 413,252" fill="#B45309" stroke="#fff" stroke-width="2"/>
+        <text class="pt-lbl" x="442" y="274" text-anchor="start">Notification opt-out / signal ignored</text>
+      </g>
+      <!-- 5. Trend staleness  low, low-medium, drop  (0.18, 0.32) -->
+      <g class="pt" tabindex="0" focusable="true" role="img" aria-label="Trend staleness. Low evidence, low-medium impact. Drop.">
+        <circle class="hit" cx="219" cy="330" r="16" fill="transparent"/>
+        <rect x="210" y="321" width="18" height="18" rx="2" fill="#5B5568" stroke="#fff" stroke-width="2"/>
+        <text class="pt-lbl" x="236" y="318" text-anchor="start">Trend staleness</text>
+      </g>
+      <!-- 6. Generic price  high frequency, low impact, drop  (0.86, 0.16) -->
+      <g class="pt" tabindex="0" focusable="true" role="img" aria-label="Generic price sentiment. High frequency, low actionable impact. Drop.">
+        <circle class="hit" cx="684" cy="399" r="16" fill="transparent"/>
+        <rect x="675" y="390" width="18" height="18" rx="2" fill="#5B5568" stroke="#fff" stroke-width="2"/>
+        <text class="pt-lbl" x="684" y="428" text-anchor="middle">Generic price sentiment</text>
+      </g>
+    </svg>
+    <ul class="opp-legend" aria-label="Verdict colours and shapes">
+      <li><span class="mark pursue" aria-hidden="true"></span> Pursue <span class="key">teal · circle</span></li>
+      <li><span class="mark secondary" aria-hidden="true"></span> Secondary <span class="key">clay · diamond</span></li>
+      <li><span class="mark drop" aria-hidden="true"></span> Drop <span class="key">slate · square</span></li>
+    </ul>
+    <p class="opp-cap">Impact scores are reasoned directional estimates, not measured — hypotheses, consistent with the 29→1 honesty check.</p>
+  </figure>
+</section>
+
+<section class="panel wrap" id="panel-honesty" role="tabpanel" aria-labelledby="tab-honesty">
+  <h2>The honesty check that changed the conclusion</h2>
+  <p class="sub" id="honesty-sub"></p>
+  <div class="callout">
+    <h3 id="honesty-title"></h3>
+    <div class="compare">
+      <div class="cbox was"><div class="big" id="honesty-generic">44</div><div class="cap">generic price sentiment — “costly”, “love the discounts”. Not deferral.</div></div>
+      <div class="cbox now"><div class="big" id="honesty-deferral">4</div><div class="cap">genuine price-driven purchase deferral — someone actually waiting/abandoning on price.</div></div>
+    </div>
+    <p>The same discipline still shrinks “wishlist/save” (heart-emoji false positives) and “forgot/stale” (mostly stock-availability) once you read the rows. <b>Conclusion:</b> short-form store reviews under-evidence save-then-abandon behaviour; the denser signal remains in long-form Reddit.</p>
+  </div>
+</section>
+
+<section class="panel wrap" id="panel-verbatims" role="tabpanel" aria-labelledby="tab-verbatims">
+  <h2>Representative verbatims</h2>
+  <p class="sub">A sample of genuinely relevant items, across sources. Paraphrased where needed; each is tagged by the mechanism it evidences.</p>
+  <div class="quotes" id="quotes"></div>
+</section>
+
+<section class="panel wrap" id="panel-engine" role="tabpanel" aria-labelledby="tab-engine">
+  <h2>How the engine works</h2>
+  <p class="sub">Collection is scripted (Play/App Store scrapers, YouTube Data API, Reddit); classification is an LLM pass against a fixed taxonomy, validated by a manual agreement check on a sample.</p>
+  <div class="steps">
+    <div class="step"><div class="n">01 · collect</div><h4>Scrape sources</h4><p>Play/App Store v1+v2 merged, plus YouTube and Reddit, into one schema.</p></div>
+    <div class="step"><div class="n">02 · classify</div><h4>Relevance pass</h4><p>LLM tags each item: is this real save-then-decide behaviour? Not sentiment.</p></div>
+    <div class="step"><div class="n">03 · re-check</div><h4>Strict re-read</h4><p>Separate genuine deferral from generic mentions. Counts corrected down.</p></div>
+    <div class="step"><div class="n">04 · validate</div><h4>Manual audit</h4><p>Hand-tag a sample, compare to the model, report the agreement rate.</p></div>
+  </div>
+  <div class="note">The live pipeline runs from the project repo (scrapers + classification scripts). This page is the <b>findings surface</b> — it presents the output of that run so it can be read and interrogated without re-running collection. Classification is fact-constrained: the model tags and quotes, it doesn't invent items.</div>
+</section>
+</div>
+
+<footer><div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+  <span>Discovery Engine- Myntra · Part 1 deliverable · findings from the pipeline run.</span>
+  <span id="footer-stats">Corpus 2,821 · relevant 104 (3.7%) · Play/App Store v1+v2 merged</span>
+</div></footer>
+</div>
+
+<script>
+const FALLBACK = {
+  extracted_at: "2026-08-28",
+  source_file: "classified_relevance_merged.csv",
+  total: 2821,
+  relevant: 104,
+  keyword: 31,
+  sources: [
+    { key: "play store", relevant: 57, total: 1882 },
+    { key: "youtube", relevant: 28, total: 403 },
+    { key: "reddit", relevant: 10, total: 11 },
+    { key: "app store", relevant: 9, total: 525 }
+  ],
+  themes: [
+    ["Price / sale timing", 45, "var(--marigold-deep)"],
+    ["Wishlist / save behaviour", 22, "var(--ink)"],
+    ["Purchase hesitation (other)", 12, "var(--slate)"],
+    ["Comparison shopping", 10, "var(--teal)"],
+    ["Size / fit uncertainty", 10, "var(--clay)"],
+    ["Forgot / went stale", 4, "var(--rose)"]
+  ],
+  price: { tagged: 48, generic: 44, deferral: 4 },
+  quotes: [
+    ["Saved it for later, waited for a sale — but by the time the price dropped the size was gone, so I bought the same thing cheaper elsewhere.","Reddit","cross-platform leakage","var(--teal)"],
+    ["Sizes are not available for many of my liked products.","Play Store","size / fit","var(--clay)"],
+    ["Prices are slightly higher than other platforms — I cross-check before buying.","Play Store","comparison shopping","var(--teal)"],
+    ["The offer showed on the app, but two days later at booking it was auto-cancelled.","Play Store","price / timing","var(--marigold-deep)"],
+    ["1,000-item wishlist cap stopped me from saving more.","Reddit","wishlist behaviour","var(--ink)"],
+    ["Wishlisted item shows a higher price than its sibling colours.","Reddit","price / timing","var(--marigold-deep)"],
+    ["I’ll wait for the December End of Reason Sale before buying what’s saved.","Reddit","price / timing","var(--marigold-deep)"],
+    ["Bought it straight from the wishlist because it was sale time.","Reddit","wishlist behaviour","var(--ink)"]
+  ]
+};
+
+function fmt(n){ return Number(n).toLocaleString("en-US"); }
+function pct(n, d){ return d ? (100 * n / d).toFixed(1) : "0.0"; }
+
+function render(data, statusText){
+  const relPct = pct(data.relevant, data.total);
+  document.getElementById("meta").textContent =
+    `corpus ${fmt(data.total)} · relevant ${fmt(data.relevant)} · cached extract`;
+  document.getElementById("cache-status").textContent = statusText ||
+    `Showing last extracted snapshot · ${data.extracted_at}`;
+
+  document.getElementById("funnel-title").textContent =
+    `From ${fmt(data.total)} merged items to ${fmt(data.relevant)} with real signal`;
+  document.getElementById("funnel-sub").textContent =
+    "Play Store and App Store v1+v2 were unioned and deduped, then combined with YouTube and Reddit. Most review text is about delivery, refunds, and app bugs. A strict LLM relevance pass — not keyword matching — found the small slice that actually describes saving, deferring, or abandoning a purchase.";
+
+  const kwW = Math.max(10, Math.round(100 * data.keyword / data.total));
+  const relW = Math.max(16, Math.round(100 * data.relevant / data.total * 6));
+  document.getElementById("funnel").innerHTML = `
+    <div class="frow"><div class="fbar" style="background:var(--ink);width:0" data-w="100%">${fmt(data.total)} items after v1+v2 merge</div><span class="fnote">Play Store, App Store, YouTube, Reddit · short/empty dropped</span></div>
+    <div class="frow"><div class="fbar" style="background:var(--slate);width:0" data-w="${kwW}%">${fmt(data.keyword)} keyword-adjacent</div><span class="fnote">surface tokens only — keywords miss paraphrased intent</span></div>
+    <div class="frow"><div class="fbar" style="background:var(--teal);width:0" data-w="${relW}%">${fmt(data.relevant)} genuinely relevant</div><span class="fnote"><b>${relPct}%</b> of the corpus — LLM pass, the honest denominator</span></div>`;
+
+  document.getElementById("sources").innerHTML = data.sources.map(s => {
+    const dens = pct(s.relevant, s.total);
+    const extra = s.key === "reddit" ? ` · ${dens}%` : "";
+    return `<div class="src"><div class="k">${s.key}</div><div class="v">${s.relevant}</div><div class="r">of ${fmt(s.total)}${extra}</div></div>`;
+  }).join("");
+
+  const reddit = data.sources.find(s => s.key === "reddit") || { relevant:0, total:1 };
+  const app = data.sources.find(s => s.key === "app store") || { relevant:0, total:1 };
+  const rPct = pct(reddit.relevant, reddit.total);
+  const aPct = pct(app.relevant, app.total);
+  const densX = aPct > 0 ? Math.round(parseFloat(rPct) / parseFloat(aPct)) : "—";
+  document.getElementById("reddit-note").innerHTML =
+    `<b>Reddit was ~${densX}× denser in signal than App Store reviews</b> (${rPct}% vs ${aPct}%) — long-form discussion carries behavioural narrative that star-rating reviews don't. It was also the hardest to collect (API now gated), so it's the smallest source despite being the richest per item.`;
+
+  const maxT = Math.max(...data.themes.map(t => t[1]));
+  document.getElementById("themes").innerHTML = data.themes.map(([l,n,c]) =>
+    `<div class="theme"><span class="lbl">${l}</span>
+     <div class="track"><div class="fill" style="background:${c};width:0" data-w="${(n/maxT*100).toFixed(0)}%"></div></div>
+     <span class="cnt">${n}</span></div>`).join("");
+
+  const p = data.price;
+  document.getElementById("honesty-sub").textContent =
+    `The first classification tagged any mention of price as “price/sale timing” — ${p.tagged} items. A stricter re-read, separating genuine purchase-deferral from generic price sentiment, collapsed that almost entirely.`;
+  document.getElementById("honesty-title").textContent =
+    `“Price/sale timing”: ${p.tagged} → ${p.deferral} under strict definition`;
+  document.getElementById("honesty-generic").textContent = p.generic;
+  document.getElementById("honesty-deferral").textContent = p.deferral;
+
+  document.getElementById("quotes").innerHTML = data.quotes.map(([t,src,tag,c]) =>
+    `<div class="q"><p>“${t}”</p><span class="tag"><span class="swatch" style="background:${c}"></span>${src} · ${tag}</span></div>`).join("");
+
+  document.getElementById("footer-stats").textContent =
+    `Corpus ${fmt(data.total)} · relevant ${fmt(data.relevant)} (${relPct}%) · Play/App Store v1+v2 merged`;
+
+  requestAnimationFrame(() => {
+    document.querySelectorAll("[data-w]").forEach(el => { el.style.width = el.dataset.w; });
+  });
+}
+
+async function loadExtract(bustCache){
+  try {
+    const url = `${API}/api/extract${bustCache ? "?t=" + Date.now() : ""}`;
+    const res = await fetch(url);
+    if (res.ok) return res.json();
+  } catch (e) {}
+  const url = bustCache ? `data.json?t=${Date.now()}` : "data.json";
+  const res = await fetch(url, { cache: bustCache ? "no-store" : "force-cache" });
+  if (!res.ok) throw new Error("extract missing");
+  return res.json();
+}
+
+const btn = document.getElementById("scrape-btn");
+const API = (window.DISCOVERY_API || (location.port === "8000" ? "" : "http://127.0.0.1:8000")).replace(/\/$/, "");
+const POLL_MS = 1500;
+const POLL_MAX = 480; /* ~12 minutes — classification of new reviews is slow */
+
+function sleep(ms){ return new Promise(r => setTimeout(r, ms)); }
+
+function setProgress(text){
+  document.getElementById("cache-status").textContent = text;
+}
+
+async function pollJob(jobId){
+  for (let i = 0; i < POLL_MAX; i++){
+    const res = await fetch(`${API}/api/scrape/${jobId}`);
+    if (!res.ok) throw new Error("API not reachable");
+    const job = await res.json();
+    setProgress(job.message || "Scraping…");
+    if (job.status === "done") return job;
+    if (job.status === "error") throw new Error(job.message || "Scrape failed");
+    await sleep(POLL_MS);
+  }
+  throw new Error("Scrape timed out");
+}
+
+async function waitUntilServerIdle(){
+  for (let i = 0; i < POLL_MAX; i++){
+    const res = await fetch(`${API}/api/health`);
+    if (!res.ok) throw new Error("API not reachable");
+    const h = await res.json();
+    setProgress(h.scrape_busy
+      ? "Scrape still running on the server — keeping this page on the cached snapshot until it finishes…"
+      : "Scrape finished on the server — loading extract…");
+    if (!h.scrape_busy) return;
+    await sleep(POLL_MS);
+  }
+  throw new Error("Scrape is taking longer than expected. Click Scrape again to keep waiting.");
+}
+
+async function scrapeAgain(){
+  btn.disabled = true;
+  btn.textContent = "Scraping…";
+  setProgress("Connecting to live scrape API…");
+  try {
+    const started = await fetch(`${API}/api/scrape`, { method: "POST" });
+    if (!started.ok) throw new Error("API not reachable");
+    const body = await started.json();
+    const job = await pollJob(body.job_id);
+    const data = job.extract || await loadExtract(true);
+    render(data, job.message || "Live scrape finished");
+  } catch (err) {
+    const msg = err.message || "error";
+    const waitForServer = /already running|timed out|taking longer/i.test(msg);
+    if (waitForServer) {
+      try {
+        setProgress("A scrape is already in progress — waiting for it to finish. Snapshot stays on screen.");
+        await waitUntilServerIdle();
+        const data = await loadExtract(true);
+        render(data, "Live scrape finished");
+        return;
+      } catch (e2) {
+        setProgress((e2.message || "Still waiting") + " Cached extract is unchanged.");
+        return;
+      }
+    }
+    setProgress("Could not start scrape (" + msg + "). Cached extract still showing. Use http://127.0.0.1:8000/ with api_server.py running.");
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "Scrape again";
+  }
+}
+
+function animatePanel(panel){
+  panel.querySelectorAll("[data-w]").forEach(el => {
+    const w = el.dataset.w;
+    el.style.width = "0";
+    requestAnimationFrame(() => { el.style.width = w; });
+  });
+}
+
+function showTab(id){
+  document.querySelectorAll(".tab").forEach(t => {
+    const on = t.dataset.tab === id;
+    t.setAttribute("aria-selected", on ? "true" : "false");
+    t.tabIndex = on ? 0 : -1;
+  });
+  document.querySelectorAll(".panel").forEach(p => p.classList.toggle("is-on", p.id === id));
+  const panel = document.getElementById(id);
+  if (panel) animatePanel(panel);
+}
+
+document.querySelectorAll(".tab").forEach(tab => {
+  tab.addEventListener("click", () => showTab(tab.dataset.tab));
+});
+document.querySelector(".tabbar").addEventListener("keydown", e => {
+  const tabs = [...document.querySelectorAll(".tab")];
+  const i = tabs.findIndex(t => t.getAttribute("aria-selected") === "true");
+  if (e.key === "ArrowRight" || e.key === "ArrowLeft"){
+    e.preventDefault();
+    const next = tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+    next.focus();
+    showTab(next.dataset.tab);
+  }
+});
+
+btn.addEventListener("click", scrapeAgain);
+
+/* Paint cached extract immediately (no network wait). */
+render(FALLBACK, `Showing last extracted snapshot · ${FALLBACK.extracted_at}`);
+loadExtract(false).then(data => {
+  render(data, `Showing last extracted snapshot · ${data.extracted_at}`);
+}).catch(() => {});
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+total=2821
+relevant=104
+keyword=31
+rel_playstore=57
+all_playstore=1882
+rel_youtube=28
+all_youtube=403
+rel_reddit=10
+all_reddit=11
+rel_appstore=9
+all_appstore=525
+bucket|Price / sale timing|45
+bucket|Wishlist / save / favourite|22
+bucket|Purchase hesitation (other)|12
+bucket|Comparison shopping|10
+bucket|Size / fit uncertainty|10
+bucket|Forgot / went stale|4
+bucket|Other / uncategorized|1

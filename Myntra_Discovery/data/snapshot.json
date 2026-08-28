@@ -1,0 +1,231 @@
+{
+  "extracted_at": "2026-08-28",
+  "source_file": "classified_relevance_merged.csv",
+  "corpus_total": 3030,
+  "relevant_count": 111,
+  "keyword": 32,
+  "sources": [
+    {
+      "key": "play store",
+      "relevant": 62,
+      "total": 2003
+    },
+    {
+      "key": "youtube",
+      "relevant": 28,
+      "total": 403
+    },
+    {
+      "key": "reddit",
+      "relevant": 10,
+      "total": 11
+    },
+    {
+      "key": "app store",
+      "relevant": 11,
+      "total": 613
+    }
+  ],
+  "themes": [
+    {
+      "name": "Price / sale timing",
+      "count": 51,
+      "color": "#B67A05"
+    },
+    {
+      "name": "Wishlist / save behaviour",
+      "count": 22,
+      "color": "#3A1D3D"
+    },
+    {
+      "name": "Purchase hesitation (other)",
+      "count": 20,
+      "color": "#5B5568"
+    },
+    {
+      "name": "Comparison shopping",
+      "count": 10,
+      "color": "#0E7C6B"
+    },
+    {
+      "name": "Size / fit uncertainty",
+      "count": 7,
+      "color": "#B45309"
+    },
+    {
+      "name": "Other / uncategorized",
+      "count": 1,
+      "color": "#5B5568"
+    }
+  ],
+  "questions": [
+    {
+      "question": "Why do users add to wishlist?",
+      "answer": "Deferred intent — a price/occasion holding pen, not impulse.",
+      "confidence": "medium"
+    },
+    {
+      "question": "What prevents purchase?",
+      "answer": "Price gap vs other platforms; size unavailable in their size.",
+      "confidence": "high"
+    },
+    {
+      "question": "What uncertainties remain?",
+      "answer": "Whether the price is genuinely good, and whether their size stays in stock.",
+      "confidence": "medium"
+    },
+    {
+      "question": "What causes postponement?",
+      "answer": "Waiting for a sale; size out of stock; comparing elsewhere.",
+      "confidence": "high"
+    },
+    {
+      "question": "How do users compare shortlisted products?",
+      "answer": "Cross-platform price checks (Amazon/Flipkart/Ajio) dominate.",
+      "confidence": "high"
+    },
+    {
+      "question": "What info sought outside Myntra?",
+      "answer": "Prices on other apps; reviews/YouTube for fit and quality.",
+      "confidence": "high"
+    },
+    {
+      "question": "Role of fit/size/styling/price/reviews/occasion/social validation?",
+      "answer": "Price, size and comparison strongly present; styling and social validation NOT strongly surfaced in public text.",
+      "confidence": "medium"
+    },
+    {
+      "question": "Wishlist as genuine intent vs bookmark?",
+      "answer": "Both — large unpruned lists used as bookmarks, alongside sale-triggered buying.",
+      "confidence": "medium"
+    },
+    {
+      "question": "How do behaviours differ across segments?",
+      "answer": "Not resolvable from public text alone — carried to interviews.",
+      "confidence": "low"
+    },
+    {
+      "question": "What unmet needs recur?",
+      "answer": "Users repeatedly leave Myntra to verify price/value elsewhere before buying.",
+      "confidence": "high"
+    }
+  ],
+  "opportunities": [
+    {
+      "name": "Cross-platform price-leakage",
+      "evidence": 0.88,
+      "impact": 0.9,
+      "verdict": "pursue"
+    },
+    {
+      "name": "In-app “good price/time?” signal",
+      "evidence": 0.76,
+      "impact": 0.78,
+      "verdict": "pursue"
+    },
+    {
+      "name": "Size/fit availability clarity",
+      "evidence": 0.5,
+      "impact": 0.72,
+      "verdict": "secondary"
+    },
+    {
+      "name": "Notification opt-out / signal ignored",
+      "evidence": 0.48,
+      "impact": 0.5,
+      "verdict": "secondary"
+    },
+    {
+      "name": "Trend staleness",
+      "evidence": 0.18,
+      "impact": 0.32,
+      "verdict": "drop"
+    },
+    {
+      "name": "Generic price sentiment",
+      "evidence": 0.86,
+      "impact": 0.16,
+      "verdict": "drop"
+    }
+  ],
+  "honesty": {
+    "tagged": 48,
+    "generic": 44,
+    "deferral": 4
+  },
+  "verbatims": [
+    {
+      "text": "Saved it for later, waited for a sale — but by the time the price dropped the size was gone, so I bought the same thing cheaper elsewhere.",
+      "source": "Reddit",
+      "tag": "cross-platform leakage",
+      "color": "#0E7C6B"
+    },
+    {
+      "text": "Sizes are not available for many of my liked products.",
+      "source": "Play Store",
+      "tag": "size / fit",
+      "color": "#B45309"
+    },
+    {
+      "text": "Prices are slightly higher than other platforms — I cross-check before buying.",
+      "source": "Play Store",
+      "tag": "comparison shopping",
+      "color": "#0E7C6B"
+    },
+    {
+      "text": "The offer showed on the app, but two days later at booking it was auto-cancelled.",
+      "source": "Play Store",
+      "tag": "price / timing",
+      "color": "#B67A05"
+    },
+    {
+      "text": "1,000-item wishlist cap stopped me from saving more.",
+      "source": "Reddit",
+      "tag": "wishlist behaviour",
+      "color": "#3A1D3D"
+    },
+    {
+      "text": "Wishlisted item shows a higher price than its sibling colours.",
+      "source": "Reddit",
+      "tag": "price / timing",
+      "color": "#B67A05"
+    },
+    {
+      "text": "I’ll wait for the December End of Reason Sale before buying what’s saved.",
+      "source": "Reddit",
+      "tag": "price / timing",
+      "color": "#B67A05"
+    },
+    {
+      "text": "Bought it straight from the wishlist because it was sale time.",
+      "source": "Reddit",
+      "tag": "wishlist behaviour",
+      "color": "#3A1D3D"
+    }
+  ],
+  "engine": {
+    "steps": [
+      {
+        "n": "01 · collect",
+        "title": "Scrape sources",
+        "body": "Play/App Store v1+v2 merged, plus YouTube and Reddit, into one schema."
+      },
+      {
+        "n": "02 · classify",
+        "title": "Relevance pass",
+        "body": "LLM tags each item: is this real save-then-decide behaviour? Not sentiment."
+      },
+      {
+        "n": "03 · re-check",
+        "title": "Strict re-read",
+        "body": "Separate genuine deferral from generic mentions. Counts corrected down."
+      },
+      {
+        "n": "04 · validate",
+        "title": "Manual audit",
+        "body": "Hand-tag a sample, compare to the model, report the agreement rate."
+      }
+    ],
+    "note": "The live pipeline runs from the project repo (scrapers + classification scripts). This page is the findings surface — it presents the output of that run so it can be read and interrogated without re-running collection. Classification is fact-constrained: the model tags and quotes, it doesn't invent items."
+  }
+}

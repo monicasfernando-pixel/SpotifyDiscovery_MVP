@@ -1,0 +1,116 @@
+{
+  "extracted_at": "2026-08-28",
+  "source_file": "classified_relevance_merged.csv",
+  "total": 3030,
+  "relevant": 111,
+  "keyword": 32,
+  "sources": [
+    {
+      "key": "play store",
+      "relevant": 62,
+      "total": 2003
+    },
+    {
+      "key": "youtube",
+      "relevant": 28,
+      "total": 403
+    },
+    {
+      "key": "reddit",
+      "relevant": 10,
+      "total": 11
+    },
+    {
+      "key": "app store",
+      "relevant": 11,
+      "total": 613
+    }
+  ],
+  "themes": [
+    [
+      "Price / sale timing",
+      51,
+      "var(--marigold-deep)"
+    ],
+    [
+      "Wishlist / save behaviour",
+      22,
+      "var(--ink)"
+    ],
+    [
+      "Purchase hesitation (other)",
+      20,
+      "var(--slate)"
+    ],
+    [
+      "Comparison shopping",
+      10,
+      "var(--teal)"
+    ],
+    [
+      "Size / fit uncertainty",
+      7,
+      "var(--clay)"
+    ],
+    [
+      "Other / uncategorized",
+      1,
+      "var(--slate)"
+    ]
+  ],
+  "price": {
+    "tagged": 48,
+    "generic": 44,
+    "deferral": 4
+  },
+  "quotes": [
+    [
+      "Saved it for later, waited for a sale — but by the time the price dropped the size was gone, so I bought the same thing cheaper elsewhere.",
+      "Reddit",
+      "cross-platform leakage",
+      "var(--teal)"
+    ],
+    [
+      "Sizes are not available for many of my liked products.",
+      "Play Store",
+      "size / fit",
+      "var(--clay)"
+    ],
+    [
+      "Prices are slightly higher than other platforms — I cross-check before buying.",
+      "Play Store",
+      "comparison shopping",
+      "var(--teal)"
+    ],
+    [
+      "The offer showed on the app, but two days later at booking it was auto-cancelled.",
+      "Play Store",
+      "price / timing",
+      "var(--marigold-deep)"
+    ],
+    [
+      "1,000-item wishlist cap stopped me from saving more.",
+      "Reddit",
+      "wishlist behaviour",
+      "var(--ink)"
+    ],
+    [
+      "Wishlisted item shows a higher price than its sibling colours.",
+      "Reddit",
+      "price / timing",
+      "var(--marigold-deep)"
+    ],
+    [
+      "I’ll wait for the December End of Reason Sale before buying what’s saved.",
+      "Reddit",
+      "price / timing",
+      "var(--marigold-deep)"
+    ],
+    [
+      "Bought it straight from the wishlist because it was sale time.",
+      "Reddit",
+      "wishlist behaviour",
+      "var(--ink)"
+    ]
+  ]
+}
